@@ -8,10 +8,6 @@ namespace RockPaperScissors
     {
         static void Main(string[] args)
         {
-            // Change console colors
-            //Console.BackgroundColor = ConsoleColor.Black;
-            //Console.ForegroundColor = ConsoleColor.White;
-
             // Game description
             PrintGameDescription();
 
@@ -34,7 +30,7 @@ namespace RockPaperScissors
             PlayGame(numGames);
         }
 
-
+        // --------------------------------------------------------------------------------------------------------------
 
         static string? GetUserInput(string prompt)
         {
@@ -146,13 +142,16 @@ namespace RockPaperScissors
 
         public static string ConvertChoiceToArt(string choice)
         {
-            if (choice == "r")  // Rock
+            // Rock
+            if (choice == "r")
                 return "\r\n    _______\r\n---'   ____)\r\n      (_____)\r\n      (_____)\r\n      (____)\r\n---.__(___)\r\n";
-            
-            else if (choice == "p")  // Paper
+
+            // Paper
+            else if (choice == "p")
                 return "\r\n    _______\r\n---'   ____)____\r\n          ______)\r\n          _______)\r\n         _______)\r\n---.__________)\r\n";
 
-            else  // Scissors
+            // Scissors
+            else
                 return "\r\n    _______\r\n---'   ____)____\r\n          ______)\r\n       __________)\r\n      (____)\r\n---.__(___)\r\n";
         }
 
