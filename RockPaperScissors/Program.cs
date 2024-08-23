@@ -13,10 +13,7 @@ namespace RockPaperScissors
             //Console.ForegroundColor = ConsoleColor.White;
 
             // Game description
-            Console.WriteLine("\r\n\r\n██████████████████████████\r\n█▄─▄▄▀█─▄▄─█─▄▄▄─█▄─█─▄███\r\n██─▄─▄█─██─█─███▀██─▄▀████\r\n▀▄▄▀▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀\r\n█████████████████████████████████\r\n█▄─▄▄─██▀▄─██▄─▄▄─█▄─▄▄─█▄─▄▄▀███\r\n██─▄▄▄██─▀─███─▄▄▄██─▄█▀██─▄─▄███\r\n▀▄▄▄▀▀▀▄▄▀▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀\r\n██████████████████████████████████████████████\r\n█─▄▄▄▄█─▄▄▄─█▄─▄█─▄▄▄▄█─▄▄▄▄█─▄▄─█▄─▄▄▀█─▄▄▄▄█\r\n█▄▄▄▄─█─███▀██─██▄▄▄▄─█▄▄▄▄─█─██─██─▄─▄█▄▄▄▄─█\r\n▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀\r\n");
-            Console.WriteLine("Welcome to console Rock, Paper, Scissors by Logan Wiggins.");
-            Console.WriteLine("Let's get started! (Type Ctrl+C at any time to end the game)");
-            Console.WriteLine();
+            PrintGameDescription();
 
             // User prompts
             string? numGamesStr = GetUserInput("? How many games would you like to play? Best of:");
@@ -36,6 +33,8 @@ namespace RockPaperScissors
             // Game logic
             PlayGame(numGames);
         }
+
+
 
         static string? GetUserInput(string prompt)
         {
@@ -86,7 +85,7 @@ namespace RockPaperScissors
             }
 
             // End game stats
-            GenerateGameOverStats(userScore, oppScore);
+            PrintGameOverStats(userScore, oppScore);
         }
 
         public static string GenerateOpponentChoice()
@@ -157,7 +156,15 @@ namespace RockPaperScissors
                 return "\r\n    _______\r\n---'   ____)____\r\n          ______)\r\n       __________)\r\n      (____)\r\n---.__(___)\r\n";
         }
 
-        public static void GenerateGameOverStats(int userScore, int oppScore)
+        public static void PrintGameDescription()
+        {
+            Console.WriteLine("\r\n\r\n██████████████████████████\r\n█▄─▄▄▀█─▄▄─█─▄▄▄─█▄─█─▄███\r\n██─▄─▄█─██─█─███▀██─▄▀████\r\n▀▄▄▀▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀\r\n█████████████████████████████████\r\n█▄─▄▄─██▀▄─██▄─▄▄─█▄─▄▄─█▄─▄▄▀███\r\n██─▄▄▄██─▀─███─▄▄▄██─▄█▀██─▄─▄███\r\n▀▄▄▄▀▀▀▄▄▀▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀\r\n██████████████████████████████████████████████\r\n█─▄▄▄▄█─▄▄▄─█▄─▄█─▄▄▄▄█─▄▄▄▄█─▄▄─█▄─▄▄▀█─▄▄▄▄█\r\n█▄▄▄▄─█─███▀██─██▄▄▄▄─█▄▄▄▄─█─██─██─▄─▄█▄▄▄▄─█\r\n▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀\r\n");
+            Console.WriteLine("Welcome to console Rock, Paper, Scissors by Logan Wiggins.");
+            Console.WriteLine("Let's get started! (Type Ctrl+C at any time to end the game)");
+            Console.WriteLine();
+        }
+
+        public static void PrintGameOverStats(int userScore, int oppScore)
         {
             Console.WriteLine("\r\n█████▀█████████████████████\r\n█─▄▄▄▄██▀▄─██▄─▀█▀─▄█▄─▄▄─█\r\n█─██▄─██─▀─███─█▄█─███─▄█▀█\r\n▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀\r\n████████████████████████\r\n█─▄▄─█▄─█─▄█▄─▄▄─█▄─▄▄▀█\r\n█─██─██▄▀▄███─▄█▀██─▄─▄█\r\n▀▄▄▄▄▀▀▀▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀\r\n");
             Console.WriteLine("FINAL SCORE:");
