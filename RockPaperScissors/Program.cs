@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using Console = Colorful.Console;
-
+// Loving the overall organization, variable names and formatting of the program, nice job!
 namespace RockPaperScissors
 {
     internal class Program
@@ -51,6 +51,7 @@ namespace RockPaperScissors
             // Game loop
             while (userScore != bestOfNum && oppScore != bestOfNum)
             {
+                /*nice use of the emojis here */
                 string userChoice = GetUserInput("Choose (R)Rock ✊, (P)Paper 🖐️, (S)Scissors ✌️:").ToLower();
                 string oppChoice;
 
@@ -93,7 +94,7 @@ namespace RockPaperScissors
             else if (randomNum == 1) return "p";
             else return "s";
         }
-
+        // Could leave a comment as "Win/Victory/Tie Conditions" here 
         public static void IncrementScore(string userChoice, string oppChoice, ref int userScore, ref int oppScore)
         {
             if (userChoice == "r")
