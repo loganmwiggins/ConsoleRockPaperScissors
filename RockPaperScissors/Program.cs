@@ -96,46 +96,58 @@ namespace RockPaperScissors
 
         public static void IncrementScore(string userChoice, string oppChoice, ref int userScore, ref int oppScore)
         {
+            // User chooses rock
             if (userChoice == "r")
             {
+                // Opponent chooses paper
                 if (oppChoice == "p")
                 {
                     Console.WriteLine("UH OH!");
                     oppScore++;
                 }
+                // Opponent chooses scissors
                 else if (oppChoice == "s")
                 {
                     Console.WriteLine("NICE!");
                     userScore++;
                 }
+                // Opponent chooses rock
                 else { Console.WriteLine("TIE!"); }
             }
+            // User chooses paper
             else if (userChoice == "p")
             {
+                // Opponent chooses scissors
                 if (oppChoice == "s")
                 {
                     Console.WriteLine("OH NO!");
                     oppScore++;
                 }
+                // Opponent chooses rock
                 else if (oppChoice == "r")
                 {
                     Console.WriteLine("DUB!");
                     userScore++;
                 }
+                // Opponent chooses paper
                 else { Console.WriteLine("TIE!"); }
             }
+            // User chooses scissors
             else
             {
+                // Opponent chooses rock
                 if (oppChoice == "r")
                 {
                     Console.WriteLine("OOPS!");
                     oppScore++;
                 }
+                // Opponent chooses paper
                 else if (oppChoice == "p")
                 {
                     Console.WriteLine("GOOD JOB!");
                     userScore++;
                 }
+                // Opponent chooses scissors
                 else { Console.WriteLine("TIE!"); }
             }
         }
